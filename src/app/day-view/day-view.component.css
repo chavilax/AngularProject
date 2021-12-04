@@ -3,10 +3,13 @@ table {
   }
   
   .mat-form-field {
-    font-size: 14px;
+    font-size: 20px;
     width: 100%;
   }
   
   td, th {
     width: 25%;
+  }
+ .mat-header-cell{
+    font-size: 20px;
   }

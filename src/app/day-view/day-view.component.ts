@@ -24,23 +24,25 @@ difference !:number;
 })
 export class DayViewComponent implements OnInit {
 
-  arr =arr1;
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @ViewChild(MatSort) sort !: MatSort;
+   data!:any;
+   arr =arr1;
    max !:number;
    dayMin !:string;
    dayMax !:string;
-
   dataSource !: MatTableDataSource<day>;
   displayedColumns: string[] = ['date', 'openPrice', 'closePrice', 'highPrice','lowPrice','difference'];
+
 ReturnMaxNotSort(){
   let arrToSort=this.arr;
   console.log("arrToSort",arrToSort);
-  arrToSort.sort((a,b) => a.date.localeCompare(b.date));
+  arrToSort.sort((a,b) => b.date.localeCompare(a.date));
   this.ReturnMaxSort(arrToSort);
 }
  
  ReturnMaxSort(arr:any){
-   debugger
-   let max !:number;
+     let max !:number;
    max=0;
    let dayMin !:day;
    let dayMax !:day;
@@ -60,9 +62,7 @@ ReturnMaxNotSort(){
 
  }
 
- @ViewChild(MatPaginator) paginator !: MatPaginator;
- @ViewChild(MatSort) sort !: MatSort;
-  data!:any;
+
  
   constructor(private http : HttpClient) {
   
@@ -98,7 +98,8 @@ ReturnMaxNotSort(){
         this.dataSource.sort = this.sort;
 
     this.ReturnMaxSort(this.arr)
-    this.ReturnMaxNotSort()
+    
+   //this.ReturnMaxNotSort()
    
       },
       error: error => {

@@ -12,6 +12,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MaxDaysComponent } from './max-days/max-days.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -35,7 +36,8 @@ import { MaxDaysComponent } from './max-days/max-days.component';
       MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
 
 
 
@@ -46,7 +48,8 @@ import { MaxDaysComponent } from './max-days/max-days.component';
     MatSortModule,
     MatListModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
 ],
   providers: [],
   bootstrap: [AppComponent]
